@@ -1,0 +1,240 @@
+#include <iostream>
+#include <string>
+#include <map>
+#include <cmath>
+
+
+using namespace std;
+
+int main() {
+    bool currentlyRunning = true;
+
+    while (currentlyRunning) {
+        cout << "Welcome to the Integer Representation Converter!";
+
+        cout << endl;
+        cout << endl;
+
+        cout << "Press 1 for Binary to Unsigned Encoding.";
+
+        cout << endl;
+        cout << endl;
+
+        cout << "Press 2 for Binary to Two's Complement Encoding.";
+
+        cout << endl;
+        cout << endl;
+
+        cout << "Press 3 for ";
+
+        cout << endl;
+        cout << endl;
+
+        cout << "Press 4 for ";
+
+        cout << endl;
+        cout << endl;
+        cout << endl;
+
+        cout << "If you would like to exit the program, enter 0.";
+
+        cout << endl;
+        cout << endl;
+
+        cout << endl;
+        cout << "Enter here: ";
+
+        int userInput;
+
+        cin >> userInput;
+
+
+
+        /**** BEGINNING of Unsigned Encoding ****/
+
+        if (userInput == 1) {
+
+            bool runUnsigned = true;
+
+            char runAgain;
+
+            cout << endl;
+            cout << "_______________";
+
+            cout << endl;
+            cout << endl;
+
+            cout << "You have selected Binary to Unsigned Encoding.";
+
+            cout << endl;
+            cout << endl;
+
+
+            // Map to convert individual 0's and 1's into int's
+            
+            map<char, int> stringToInt{
+
+                {'0', 0},
+                {'1', 1}
+            };
+
+
+            while (runUnsigned) {
+
+                cout << "Enter a Binary number: ";
+
+
+                string binaryInput;
+
+                cin >> binaryInput;
+
+                cout << endl;
+
+
+                /**** Binary To Unsigned Algorithm ****/
+
+          
+                /*** ERROR CHECKING: if spaces are entered, throwing an error message saying that spaces are not allowed and to enter their binary number with no spaces */
+
+
+
+                int inputSize = binaryInput.size(); // getting size of input in order to know when to stop algorithm
+
+                int finalResult = 0; // tracks the final Unsigned result after the calculations
+
+
+
+
+                for (char currentCharacter : binaryInput) {
+
+                    int currentDigitValue;
+
+                    currentDigitValue = stringToInt[currentCharacter];  // converting user's string input to int to directly work with individual digits
+
+                    finalResult += currentDigitValue * pow(2, inputSize - 1);
+
+                    inputSize--;
+
+                }
+
+                /**** End of Algorithm ****/
+
+
+
+                
+                cout << "Here is your Binary number converted to Unsigned Encoding: " << finalResult << endl;
+
+                cout << endl;
+                cout << endl;
+
+
+
+
+                cout << "Would you like to enter another number? (Y/N): ";
+
+                cin >> runAgain;
+
+                cout << endl;
+                cout << endl;
+
+                if (toupper(runAgain) == 'Y') {
+                    runUnsigned = true;
+                }
+
+                else if (toupper(runAgain) == 'N') {
+                    runUnsigned = false;
+                }
+
+
+            }
+
+
+        }
+
+
+        /**** END of Unsigned Encoding ****/
+
+
+
+     
+     
+        /**** BEGINNING of Two's Complement Encoding ****/
+
+
+        else if (userInput == 2) {
+
+
+
+
+        }
+
+
+       
+		/**** END of Two's Complement Encoding ****/
+     
+     
+
+
+
+
+
+        ///**** BEGINNING of ****/
+
+        //else if (userInput == 3) {
+
+
+
+        //}
+
+        ///**** END of ****/
+
+
+
+
+
+
+
+
+
+        ///**** BEGINNING of ****/
+
+        //else if (userInput == 4) {
+
+
+
+        //}
+
+        ///**** END of ****/
+
+
+
+
+
+
+        else if (userInput == 0) {
+
+            currentlyRunning = false;
+
+            cout << endl;
+
+            cout << "Thank you for using the program.";
+
+            cout << endl;
+            cout << endl;
+
+        }
+
+    } // end of while loop
+
+
+
+    cout << endl;
+    cout << endl;
+    cout << endl;
+    cout << endl;
+    cout << endl;
+
+
+} // int main()
+
+
